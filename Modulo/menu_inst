@@ -270,7 +270,7 @@ fun_dropbear () {
  return 0
  }
 echo -e "$barra\n\033[1;32m $(source trans -b pt:${id} "INSTALADOR DROPBEAR ADM-ULTIMATE")\n$barra"
-echo -e " $(source trans -b es:${id} "DROPBEAR USA EL PUERTO 443")\033[1;37m"
+echo -e " $(source trans -b es:${id} "DROPBEAR USA LOS PUERTOS 443 110")\033[1;37m"
 echo -e "$barra"
    [[ $(mportas|grep 443) != "" ]] && {
    echo -e "\033[1;31m $(source trans -b pt:${id} "PORTA 443 EM USO")\033[1;37m"
