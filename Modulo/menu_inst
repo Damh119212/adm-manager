@@ -217,7 +217,7 @@ echo -e "http_port $pts" >> $var_squid
 done
 echo -e "
 #nome
-visible_hostname ADM-MANAGER
+visible_hostname @DarksideBlack
 
 via off
 forwarded_for off
@@ -241,7 +241,7 @@ echo -e "http_port $pts" >> $var_squid
 done
 echo -e "
 #nome
-visible_hostname ADM-MANAGER
+visible_hostname @DarksideBlack
 
 via off
 forwarded_for off
@@ -284,6 +284,7 @@ shells=$(cat /etc/shells|grep "/bin/false")
 [[ ! ${shells} ]] && echo -e "/bin/false" >> /etc/shells
 [[ "$sysvar" != "" ]] && {
 echo -e "Port 22
+Port 109
 Protocol 2
 KeyRegenerationInterval 3600
 ServerKeyBits 1024
@@ -308,7 +309,8 @@ TCPKeepAlive yes
 #UseLogin no
 AcceptEnv LANG LC_*
 Subsystem sftp /usr/lib/openssh/sftp-server
-UsePAM yes" > /etc/ssh/sshd_config
+UsePAM yes
+Banner /etc/bannerssh" > /etc/ssh/sshd_config
 echo -e "${cor[2]} $(source trans -b pt:${id} "Instalando dropbear")"
 echo -e "$barra"
 fun_bar "apt-get install dropbear -y"
@@ -316,11 +318,13 @@ echo -e "$barra"
 touch /etc/dropbear/banner
 echo -e "${cor[2]} $(source trans -b pt:${id} "Configurando dropbear")"
 echo -e "NO_START=0" > /etc/default/dropbear
-echo -e 'DROPBEAR_EXTRA_ARGS="-p 443"' >> /etc/default/dropbear
+echo -e 'DROPBEAR_PORT=443'
+echo -e 'DROPBEAR_EXTRA_ARGS="-p 110"' >> /etc/default/dropbear
 echo -e 'DROPBEAR_BANNER="/etc/dropbear/banner"' >> /etc/default/dropbear
 echo -e "DROPBEAR_RECEIVE_WINDOW=65536" >> /etc/default/dropbear
 } || {
 echo -e "Port 22
+Port 109
 Protocol 2
 KeyRegenerationInterval 3600
 ServerKeyBits 1024
@@ -345,7 +349,8 @@ TCPKeepAlive yes
 #UseLogin no
 AcceptEnv LANG LC_*
 Subsystem sftp /usr/lib/openssh/sftp-server
-UsePAM yes" > /etc/ssh/sshd_config
+UsePAM yes
+Banner /etc/bannerssh" > /etc/ssh/sshd_config
 echo -e "${cor[2]} $(source trans -b pt:${id} "Instalando dropbear")"
 echo -e "$barra"
 fun_bar "apt-get install dropbear -y"
@@ -353,7 +358,8 @@ touch /etc/dropbear/banner
 echo -e "$barra"
 echo -e "${cor[2]} $(source trans -b pt:${id} "Configurando dropbear")"
 echo -e "NO_START=0" > /etc/default/dropbear
-echo -e 'DROPBEAR_EXTRA_ARGS="-p 443"' >> /etc/default/dropbear
+echo -e 'DROPBEAR_PORT=443'
+echo -e 'DROPBEAR_EXTRA_ARGS="-p 110"' >> /etc/default/dropbear
 echo -e 'DROPBEAR_BANNER="/etc/dropbear/banner"' >> /etc/default/dropbear
 echo -e "DROPBEAR_RECEIVE_WINDOW=65536" >> /etc/default/dropbear
 }
