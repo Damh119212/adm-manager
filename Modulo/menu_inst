@@ -318,7 +318,7 @@ echo -e "$barra"
 touch /etc/dropbear/banner
 echo -e "${cor[2]} $(source trans -b pt:${id} "Configurando dropbear")"
 echo -e "NO_START=0" > /etc/default/dropbear
-echo -e 'DROPBEAR_PORT=443'
+echo -e "DROPBEAR_PORT=443"
 echo -e 'DROPBEAR_EXTRA_ARGS="-p 110"' >> /etc/default/dropbear
 echo -e 'DROPBEAR_BANNER="/etc/dropbear/banner"' >> /etc/default/dropbear
 echo -e "DROPBEAR_RECEIVE_WINDOW=65536" >> /etc/default/dropbear
@@ -358,7 +358,7 @@ touch /etc/dropbear/banner
 echo -e "$barra"
 echo -e "${cor[2]} $(source trans -b pt:${id} "Configurando dropbear")"
 echo -e "NO_START=0" > /etc/default/dropbear
-echo -e 'DROPBEAR_PORT=443'
+echo -e "DROPBEAR_PORT=443"
 echo -e 'DROPBEAR_EXTRA_ARGS="-p 110"' >> /etc/default/dropbear
 echo -e 'DROPBEAR_BANNER="/etc/dropbear/banner"' >> /etc/default/dropbear
 echo -e "DROPBEAR_RECEIVE_WINDOW=65536" >> /etc/default/dropbear
