@@ -23,7 +23,7 @@ subprocess.call("clear",shell=True)
 if sys.argv[2:]:
  msg1 = sys.argv[2]
 else:
- msg1 = 'ADM-ULTIMATE'
+ msg1 = '<font color="red">PROXY SOCKS</font> <font color="blue">#@DarksideBlack</font>'
 
 if sys.argv[3:]:
  server = sys.argv[3]
