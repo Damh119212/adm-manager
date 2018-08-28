@@ -17,7 +17,7 @@ import traceback
 if sys.argv[2:]:
  msg1 = sys.argv[2]
 else:
- msg1 = "<font color="red">PROXY SOCKS</font> <font color="blue">#@DarksideBlack</font>"
+ msg1 = "ADMPRO"
 
 
 class ThreadingHTTPServer(ThreadingMixIn, HTTPServer):
